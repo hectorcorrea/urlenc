@@ -1,4 +1,4 @@
-A program to URL encode a string from the terminal. This is program is inspired by Eric Meyer's [URL Decoder/Encoder](https://meyerweb.com/eric/tools/dencoder/) but adapted to be used from the terminal rather than from a browser.
+A program to URL encode a string from the terminal. This program is inspired by Eric Meyer's [URL Decoder/Encoder](https://meyerweb.com/eric/tools/dencoder/) but adapted to be used from the terminal rather than from a browser.
 
 This program uses Go's native `net/url` package to do the encoding of the URL which provides a pretty smart encoding algorithm. For example, it won't encode the `http://` at the beginning of a URL but it would encode it if it is found as a query string parameter (e.g. `http://localhost?q=http://hello` would be encoded as `http://localhost?q=http%3A%2F%2Fhello`). Likewise, the Go library is smart enough to encode spaces as `+` if they are on the query string but as `%20` if they are anywhere else on the URL.
 
